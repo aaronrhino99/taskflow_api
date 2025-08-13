@@ -4,8 +4,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 8.0.2'
+
+ruby '3.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'pg', '~> 1.6'
 gem 'puma', '>=  6'
 gem 'rack-cors'
 gem 'sqlite3', '>= 2.1'
