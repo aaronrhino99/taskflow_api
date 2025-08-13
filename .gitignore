@@ -9,6 +9,8 @@
 
 # Ignore all environment files.
 /.env*
+/.env.local
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -30,3 +32,15 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+
+# Coverage reports
+coverage/
+
+# IDE files
+.vscode/
+.idea/

@@ -1,8 +1,46 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+# .rubocop.yml
+plugins:
+  - rubocop-rails      # Updated syntax (was 'require')
+  - rubocop-rspec      # Updated syntax (was 'require')
+  - rubocop-factory_bot # Add this since you have it installed
+  - rubocop-rspec_rails # Add this since you have it installed
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false  # Disable extension suggestions
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/queue_schema.rb'   # Add this file to exclusions
+    - 'db/migrate/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+# Disable documentation requirement
+Style/Documentation:
+  Enabled: false
+
+# Allow longer lines
+Layout/LineLength:
+  Max: 120
+
+# Allow longer methods
+Metrics/MethodLength:
+  Max: 20
+
+# Allow longer classes
+Metrics/ClassLength:
+  Max: 150
+
+# Allow longer blocks (especially for schema files and specs)
+Metrics/BlockLength:
+  Enabled: true
+  Max: 25
+  Exclude:
+    - 'spec/**/*'           # RSpec files often have long blocks
+    - 'db/schema.rb'        # Schema file has very long blocks
+    - 'db/queue_schema.rb'  # Queue schema file
+    - 'config/routes.rb'    # Routes file can have long blocks
+    - 'config/environments/*' # Environment configs
