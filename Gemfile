@@ -32,5 +32,5 @@ end
 
 group :test do
   gem 'database_cleaner-active_record'
-  gem 'shoulda-matchers', '~> 5.0' # Testing helpers
+  gem 'shoulda-matchers', '~> 6.5' # Testing helpers
 end
