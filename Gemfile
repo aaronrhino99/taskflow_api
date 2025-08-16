@@ -17,7 +17,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'         # Test data creation
   gem 'faker'                     # Realistic test data
-  gem 'rspec-rails', '~> 6.0'     # Testing framework
+  gem 'rspec-rails', '~> 8.0'     # Testing framework
 end
 
 group :development do
